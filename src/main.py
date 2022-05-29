@@ -284,8 +284,8 @@ def start():
                 else:
                     count = 1
                 flag = 1
-                a = 0
-                b = 0
+                left_side = 0
+                right_side = 0
                 angle = (lpos - 173) // 2
                 drive(angle, 7)
                 print("right detect angle = ,", angle)
@@ -296,28 +296,28 @@ def start():
                 else:
                     pass
                 flag = 2
-                a = 0
-                b = 0
+                left_side = 0
+                right_side = 0
                 angle = (rpos - 355) // 2
                 drive(angle, 7)
                 print("left detect angle = ", angle)
 
             elif POS.value == 3: # else
                 if flag == 0:
-                    a = 0
-                    b = 0
+                    left_side = 0
+                    right_side = 0
                     angle = (cpos_independent - 255)
                     #print("range out of y")
                 elif flag == 1:
                     print("no right")
                     angle = (lpos - 128) // 2
-                    a = 2 * angle
-                    b = 0
+                    left_side = 2 * angle
+                    right_side = 0
                 else:
                     print("no left")
                     angle = (rpos - 432) // 2
-                    a = 0
-                    b = 2 * angle
+                    left_side = 0
+                    right_side = 2 * angle
                 drive(angle, 7)
 
 
